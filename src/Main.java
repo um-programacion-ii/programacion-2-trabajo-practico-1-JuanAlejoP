@@ -51,7 +51,9 @@ public class Main {
         // Crear un camión con acoplado y mostrar sus datos
         Camion camion = new Camion("TRK123", "Scania", 2022, 8000.0, true);
         printer.imprimirInformacion(camion);
-        System.out.println("¿Tiene acoplado?: " + camion.tieneAcoplado());
 
+        // Crear un camión sin acoplado y mostrar sus datos
+        Camion camionSinAcoplado = new Camion("TRK789", "Mercedes-Benz", 2021, 7500.0, false);
+        printer.imprimirInformacion(camionSinAcoplado);
     }
 }

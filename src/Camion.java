@@ -36,4 +36,21 @@ public class Camion extends Vehiculo {
     public void setTieneAcoplado(boolean tieneAcoplado) {
         this.tieneAcoplado = tieneAcoplado;
     }
+
+    /**
+     * Devuelve una representación en texto del camión, incluyendo los datos heredados
+     * y si tiene o no acoplado.
+     *
+     * @return Información detallada del camión.
+     */
+    @Override
+    public String toString() {
+        return "=== Información del Vehículo ===\n" +
+                "Patente: " + getPatente() + "\n" +
+                "Marca: " + getMarca() + "\n" +
+                "Año: " + getAnio() + "\n" +
+                "Capacidad de carga (kg): " + getCapacidadCargaKg() + "\n" +
+                "Tiene acoplado: " + (tieneAcoplado ? "Sí" : "No") + "\n" +
+                "===============================";
+    }
 }
