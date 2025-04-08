@@ -7,9 +7,10 @@ public class VehiculoPrinter {
 
     /**
      * Imprime por consola los datos del vehículo proporcionado.
+     * Utiliza polimorfismo para imprimir subclases como Camion correctamente.
      * Si el parámetro es null, se muestra un mensaje de error.
      *
-     * @param vehiculo El objeto Vehiculo cuya información se desea mostrar.
+     * @param vehiculo El objeto Vehiculo (o subclase) cuya información se desea mostrar.
      */
     public void imprimirInformacion(Vehiculo vehiculo) {
         if (vehiculo == null) {
@@ -17,11 +18,6 @@ public class VehiculoPrinter {
             return;
         }
 
-        System.out.println("=== Información del Vehículo ===");
-        System.out.println("Patente: " + vehiculo.getPatente());
-        System.out.println("Marca: " + vehiculo.getMarca());
-        System.out.println("Año: " + vehiculo.getAnio());
-        System.out.println("Capacidad de carga (kg): " + vehiculo.getCapacidadCargaKg());
-        System.out.println("===============================");
+        System.out.println(vehiculo.toString());
     }
 }

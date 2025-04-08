@@ -141,5 +141,18 @@ public class Vehiculo {
         }
     }
 
-
+    /**
+     * Devuelve una representación en texto del vehículo.
+     *
+     * @return Información detallada del vehículo.
+     */
+    @Override
+    public String toString() {
+        return "=== Información del Vehículo ===\n" +
+                "Patente: " + patente + "\n" +
+                "Marca: " + marca + "\n" +
+                "Año: " + anio + "\n" +
+                "Capacidad de carga (kg): " + capacidadCargaKg + "\n" +
+                "===============================";
+    }
 }
