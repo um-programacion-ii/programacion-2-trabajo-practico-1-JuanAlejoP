@@ -1,12 +1,13 @@
 /**
- * Clase principal del programa. Se encarga de crear e imprimir vehículos.
+ * Clase principal del programa. Se encarga de crear e imprimir vehículos y camiones.
  */
 public class Main {
 
     /**
      * Método principal que ejecuta el programa.
-     * Crea instancias de Vehiculo e imprime su información por consola
-     * utilizando la clase VehiculoPrinter.
+     * Crea instancias de Vehiculo y Camion, imprime su información por consola
+     * utilizando la clase VehiculoPrinter, y realiza pruebas con datos inválidos
+     * para validar el manejo de excepciones.
      *
      * @param args Argumentos de línea de comandos (no utilizados en este programa)
      */
@@ -46,5 +47,11 @@ public class Main {
         } catch (IllegalArgumentException e) {
             System.out.println("\nError al crear vehículo con carga negativa: " + e.getMessage());
         }
+
+        // Crear un camión con acoplado y mostrar sus datos
+        Camion camion = new Camion("TRK123", "Scania", 2022, 8000.0, true);
+        printer.imprimirInformacion(camion);
+        System.out.println("¿Tiene acoplado?: " + camion.tieneAcoplado());
+
     }
 }
