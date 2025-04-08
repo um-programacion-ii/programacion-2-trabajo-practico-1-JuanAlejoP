@@ -33,19 +33,6 @@ public class Vehiculo {
     }
 
     /**
-     * Muestra por consola toda la información del vehículo con un formato legible,
-     * incluyendo la patente, marca, año y capacidad de carga.
-     */
-    public void mostrarInformacion() {
-        System.out.println("=== Información del Vehículo ===");
-        System.out.println("Patente: " + getPatente());
-        System.out.println("Marca: " + getMarca());
-        System.out.println("Año: " + getAnio());
-        System.out.println("Capacidad de carga (kg): " + getCapacidadCargaKg());
-        System.out.println("===============================");
-    }
-
-    /**
      * Obtiene la patente del vehículo.
      *
      * @return La patente del vehículo.
