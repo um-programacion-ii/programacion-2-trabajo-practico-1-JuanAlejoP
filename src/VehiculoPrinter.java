@@ -1,7 +1,7 @@
 /**
  * Clase encargada de imprimir por consola la información de un objeto Vehiculo.
  * Aplica el principio de responsabilidad única (SRP), separando la lógica de presentación
- * del modelo de datos.
+ * del modelo de datos. Útil para depuración o visualización de estado.
  */
 public class VehiculoPrinter {
 

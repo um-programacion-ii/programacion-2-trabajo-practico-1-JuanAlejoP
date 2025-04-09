@@ -3,15 +3,21 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Clase principal del programa. Se encarga de crear e imprimir vehículos y camiones.
+ * Clase principal del programa.
+ * Se encarga de crear vehículos, imprimir su información,
+ * realizar validaciones con datos inválidos,
+ * y proporcionar un menú interactivo para buscar vehículos por patente.
  */
 public class Main {
 
     /**
      * Método principal que ejecuta el programa.
-     * Crea instancias de Vehiculo y Camion, imprime su información por consola
+     * Crea instancias de Vehiculo, Camion y Auto, imprime su información por consola
      * utilizando la clase VehiculoPrinter, y realiza pruebas con datos inválidos
      * para validar el manejo de excepciones.
+     * También demuestra el uso de polimorfismo y referencias de tipo Vehiculo
+     * a instancias de sus subclases, y ofrece un menú interactivo para
+     * buscar vehículos por patente dentro de una lista.
      *
      * @param args Argumentos de línea de comandos (no utilizados en este programa)
      */
@@ -139,6 +145,7 @@ public class Main {
 
     /**
      * Busca un vehículo por su patente dentro de la lista proporcionada.
+     * La búsqueda no distingue entre mayúsculas y minúsculas.
      *
      * @param lista Lista de vehículos
      * @param patenteBuscada Patente a buscar

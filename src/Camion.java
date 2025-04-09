@@ -1,18 +1,18 @@
 /**
- * Representa un camión, que es un tipo de vehículo con una característica adicional:
- * puede tener un acoplado o no. Hereda de la clase Vehiculo.
+ * Representa un Camión, que es un tipo de Vehículo con una característica adicional:
+ * puede tener o no un acoplado.
  */
 public class Camion extends Vehiculo {
     private boolean tieneAcoplado;
 
     /**
-     * Crea un nuevo camión con los datos especificados.
+     * Crea una nueva instancia de Camión con los datos especificados.
      *
-     * @param patente Patente del camión.
-     * @param marca Marca del camión.
-     * @param anio Año de fabricación del camión.
-     * @param capacidadCargaKg Capacidad de carga del camión en kilogramos.
-     * @param tieneAcoplado Indica si el camión tiene acoplado.
+     * @param patente          Patente del Camión.
+     * @param marca            Marca del Camión.
+     * @param anio             Año de fabricación del Camión.
+     * @param capacidadCargaKg Capacidad de carga en kilogramos.
+     * @param tieneAcoplado    true si el Camión tiene acoplado, false en caso contrario.
      */
     public Camion(String patente, String marca, int anio, double capacidadCargaKg, boolean tieneAcoplado) {
         super(patente, marca, anio, capacidadCargaKg);
@@ -20,28 +20,28 @@ public class Camion extends Vehiculo {
     }
 
     /**
-     * Indica si el camión tiene acoplado.
+     * Devuelve verdadero si el Camión tiene acoplado.
      *
-     * @return true si tiene acoplado, false en caso contrario.
+     * @return true si tiene acoplado, false si no.
      */
     public boolean tieneAcoplado() {
         return tieneAcoplado;
     }
 
     /**
-     * Establece si el camión tiene acoplado.
+     * Establece si el Camión tiene acoplado.
      *
-     * @param tieneAcoplado true si tiene acoplado, false en caso contrario.
+     * @param tieneAcoplado true si tiene acoplado, false si no.
      */
     public void setTieneAcoplado(boolean tieneAcoplado) {
         this.tieneAcoplado = tieneAcoplado;
     }
 
     /**
-     * Devuelve una representación en texto del camión, incluyendo los datos heredados
+     * Devuelve una representación en texto del Camión, incluyendo los datos heredados
      * y si tiene o no acoplado.
      *
-     * @return Información detallada del camión.
+     * @return Información detallada del Camión.
      */
     @Override
     public String toString() {
