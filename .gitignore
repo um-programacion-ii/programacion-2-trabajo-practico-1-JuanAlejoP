@@ -1,0 +1,11 @@
+# Ignorar configuración personal de IntelliJ
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+
+# Ignorar salida de compilación
+/out/
+
+# Ignorar archivos temporales del sistema
+.DS_Store
+Thumbs.db
