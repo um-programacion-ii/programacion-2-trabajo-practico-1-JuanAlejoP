@@ -1,7 +1,7 @@
 /**
  * Representa un vehículo con atributos básicos como patente, marca, año y capacidad de carga.
- * Esta clase puede ser utilizada como base para distintos tipos de vehículos.
- * Incluye validaciones para garantizar la integridad de los datos.
+ * Esta clase puede ser utilizada como base conceptual para distintos tipos de vehículos.
+ * Incluye validaciones para garantizar la integridad de los datos ingresados.
  */
 public class Vehiculo {
     private String patente;
@@ -17,7 +17,7 @@ public class Vehiculo {
      *
      * @param patente Patente del vehículo. No puede ser nula ni vacía.
      * @param marca Marca del vehículo.
-     * @param anio Año de fabricación del vehículo. Debe estar entre 1900 y el año actual.
+     * @param anio Año de fabricación del vehículo. Debe estar entre 1900 y el año máximo permitido.
      * @param capacidadCargaKg Capacidad de carga del vehículo en kilogramos. Debe ser positiva.
      * @throws IllegalArgumentException Si alguno de los valores no cumple con las validaciones.
      */
@@ -40,6 +40,7 @@ public class Vehiculo {
     public String getPatente() {
         return patente;
     }
+
     /**
      * Obtiene la marca del vehículo.
      *
@@ -48,6 +49,7 @@ public class Vehiculo {
     public String getMarca() {
         return marca;
     }
+
     /**
      * Obtiene el año de fabricación del vehículo.
      *
@@ -56,6 +58,7 @@ public class Vehiculo {
     public int getAnio() {
         return anio;
     }
+
     /**
      * Obtiene la capacidad de carga del vehículo en kilogramos.
      *
@@ -76,6 +79,7 @@ public class Vehiculo {
         validarPatente(patente);
         this.patente = patente;
     }
+
     /**
      * Establece la marca del vehículo.
      *
@@ -84,6 +88,7 @@ public class Vehiculo {
     public void setMarca(String marca) {
         this.marca = marca;
     }
+
     /**
      * Establece el año de fabricación del vehículo.
      * Debe estar entre 1900 y el año máximo permitido.
@@ -95,6 +100,7 @@ public class Vehiculo {
         validarAnio(anio);
         this.anio = anio;
     }
+
     /**
      * Establece la capacidad de carga del vehículo en kilogramos.
      * Debe ser un valor positivo.
@@ -118,6 +124,7 @@ public class Vehiculo {
             throw new IllegalArgumentException("La patente no puede ser nula ni vacía.");
         }
     }
+
     /**
      * Valida que el año esté dentro del rango permitido.
      *
@@ -129,6 +136,7 @@ public class Vehiculo {
             throw new IllegalArgumentException("El año debe estar entre " + ANIO_MINIMO + " y " + ANIO_MAXIMO + ".");
         }
     }
+
     /**
      * Valida que la capacidad de carga sea positiva.
      *

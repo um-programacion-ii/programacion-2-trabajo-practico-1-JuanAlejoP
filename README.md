@@ -163,3 +163,116 @@ Implementar la clase base `Vehiculo` que servirá como punto de partida para la 
 ## 📝 Licencia
 
 Este trabajo es parte del curso de Programación 2 de Ingeniería en Informática. Uso educativo únicamente.
+
+---------
+
+# Vehicle Management System
+
+ **Alumno:** Juan Alejo Patiño
+
+Este proyecto es una aplicación Java simple que permite gestionar una colección de vehículos, aplicando principios de programación orientada a objetos (POO) y buenas prácticas de desarrollo. Permite buscar vehículos por patente dentro de un ArrayList junto a la impresión de su información.
+
+## ✅ Requisitos previos
+
+Antes de compilar y ejecutar el proyecto, asegurate de tener instalado lo siguiente:
+
+- **JDK 17** o superior  
+  [Descargar JDK](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- **IDE recomendada:** IntelliJ IDEA, Eclipse, NetBeans o VS Code con soporte para Java
+- Git (opcional, si se desea clonar el repositorio)
+
+## 🔧 Instrucciones para compilar y ejecutar
+
+1. Cloná el repositorio (si estás usando Git):
+   ```bash
+   git clone git@github.com:um-programacion-ii/programacion-2-trabajo-practico-1-JuanAlejoP.git
+   cd programacion-2-trabajo-practico-1-JuanAlejoP
+   ```
+
+2. Abrí el proyecto con tu IDE favorita o compilá manualmente desde consola:
+   ```bash
+    cd /ruta/a/programacion-2-trabajo-practico-1-JuanAlejoP
+    # 2. Compila el código
+    javac *.java
+
+    # 3. Ejecuta el programa
+    java Main
+
+
+   ```
+
+3. El programa se ejecutará mostrando información de distintos vehículos y habilitando la funcionalidad de búsqueda por patente.
+
+## 🚗 Ejemplos de uso
+
+### Impresión de vehículos
+Al ejecutar el programa, se crearán instancias de `Vehiculo`, `Auto` y `Camion`, y se imprimirá su información utilizando la clase `VehiculoPrinter`. Se aplican pruebas con datos inválidos para mostrar validaciones.
+
+### Búsqueda por patente
+El programa mostrará un menú al usuario con opciones para terminar la ejecución o buscar una patente dentro de la lista. Ejemplo de flujo:
+
+```
+--- MENÚ ---
+1. Buscar vehículo por patente
+0. Salir
+Seleccione una opción: 1
+Ingrese la patente del vehículo a buscar: LSP456
+```
+
+Si la patente no existe:
+
+```
+Vehículo no encontrado.
+
+--- MENÚ ---
+1. Buscar vehículo por patente
+0. Salir
+Seleccione una opción: 1
+Ingrese la patente del vehículo a buscar: ABC123
+=== Información del Vehículo ===
+Patente: ABC123
+Marca: Ford
+Año: 2010
+Capacidad de carga (kg): 1200.0
+===============================
+
+--- MENÚ ---
+1. Buscar vehículo por patente
+0. Salir
+Seleccione una opción: 0
+Saliendo del programa...
+```
+
+Se puede seguir buscando con `1` o escribir `0` para terminar el programa.
+
+Lista con vehículos en el ArrayList que se pueden buscar:
+```
+vehiculo1 = new Vehiculo("ABC123", "Ford", 2010, 1200.0);
+auto1 = new Auto("DEF456", "Toyota", 2020, 500.0, 5);
+camion1 = new Camion("GHI789", "Mercedes", 2015, 2000.0, true);
+```
+
+## 📦 Estructura del proyecto
+
+El proyecto incluye las siguientes clases principales:
+
+- `Vehiculo`: Clase base con atributos comunes.
+- `Auto`: Subclase con atributo de cantidad de pasajeros.
+- `Camion`: Subclase con atributo de acoplado.
+- `VehiculoPrinter`: Clase responsable de imprimir cualquier tipo de vehículo.
+- `Main`: Clase principal donde se crean objetos y se ejecuta la lógica.
+
+## 📘 JavaDocs
+
+Todas las clases y métodos relevantes del proyecto están documentados con JavaDocs. La documentación incluye descripciones claras de atributos, constructores y métodos, así como las etiquetas `@param` y `@return` donde corresponde.
+
+> Si tu IDE lo permite, podés generar la documentación automáticamente o navegarla desde el propio código.
+
+## ✅ Estado del proyecto
+
+- [x] Clases base y subclases creadas
+- [x] Manejo de excepciones por datos inválidos
+- [x] Aplicación de SRP, OCP, LSP
+- [x] Uso de `ArrayList<Vehiculo>`
+- [x] Búsqueda de vehículo por patente
+- [x] Proyecto organizado en GitHub con Issues, PRs y Milestones

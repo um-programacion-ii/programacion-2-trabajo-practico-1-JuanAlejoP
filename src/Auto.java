@@ -1,18 +1,18 @@
 /**
- * Representa un auto, que es un tipo de vehículo con una característica adicional:
- * la cantidad de pasajeros. Hereda de la clase Vehiculo.
+ * Representa un Auto, que es un tipo de Vehículo con una característica adicional:
+ * la cantidad de pasajeros que puede transportar.
  */
 public class Auto extends Vehiculo {
     private int cantidadPasajeros;
 
     /**
-     * Crea un nuevo auto con los datos especificados.
+     * Crea una nueva instancia de Auto con los datos especificados.
      *
-     * @param patente Patente del auto.
-     * @param marca Marca del auto.
-     * @param anio Año de fabricación del auto.
-     * @param capacidadCargaKg Capacidad de carga del auto en kilogramos.
-     * @param cantidadPasajeros Cantidad de pasajeros. Debe ser mayor a cero.
+     * @param patente           Patente del Auto.
+     * @param marca             Marca del Auto.
+     * @param anio              Año de fabricación del Auto.
+     * @param capacidadCargaKg  Capacidad de carga en kilogramos.
+     * @param cantidadPasajeros Cantidad de pasajeros (debe ser mayor a cero).
      */
     public Auto(String patente, String marca, int anio, double capacidadCargaKg, int cantidadPasajeros) {
         super(patente, marca, anio, capacidadCargaKg);
@@ -21,7 +21,7 @@ public class Auto extends Vehiculo {
     }
 
     /**
-     * Devuelve la cantidad de pasajeros del auto.
+     * Devuelve la cantidad de pasajeros del Auto.
      *
      * @return Cantidad de pasajeros.
      */
@@ -30,9 +30,9 @@ public class Auto extends Vehiculo {
     }
 
     /**
-     * Establece la cantidad de pasajeros del auto.
+     * Establece la cantidad de pasajeros del Auto.
      *
-     * @param cantidadPasajeros Cantidad de pasajeros. Debe ser mayor a cero.
+     * @param cantidadPasajeros Nueva cantidad de pasajeros (debe ser mayor a cero).
      * @throws IllegalArgumentException si el valor no es mayor a cero.
      */
     public void setCantidadPasajeros(int cantidadPasajeros) {
@@ -44,7 +44,7 @@ public class Auto extends Vehiculo {
      * Valida que la cantidad de pasajeros sea mayor a cero.
      *
      * @param cantidadPasajeros Cantidad a validar.
-     * @throws IllegalArgumentException si el valor no es mayor a cero.
+     * @throws IllegalArgumentException si la cantidad no es mayor a cero.
      */
     private void validarCantidadPasajeros(int cantidadPasajeros) {
         if (cantidadPasajeros <= 0) {
@@ -53,10 +53,10 @@ public class Auto extends Vehiculo {
     }
 
     /**
-     * Devuelve una representación en texto del auto, incluyendo los datos heredados
+     * Devuelve una representación en texto del Auto, incluyendo los datos heredados
      * y la cantidad de pasajeros.
      *
-     * @return Información detallada del auto.
+     * @return Información detallada del Auto.
      */
     @Override
     public String toString() {
