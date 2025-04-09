@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /**
  * Clase principal del programa. Se encarga de crear e imprimir vehículos y camiones.
  */
@@ -13,6 +14,7 @@ public class Main {
      */
 
     public static void main(String[] args) {
+        ArrayList<Vehiculo> vehiculos = new ArrayList<>();
         VehiculoPrinter printer = new VehiculoPrinter();
 
         Vehiculo v1 = new Vehiculo("ABC123", "Toyota", 2015, 1200.0);
@@ -76,6 +78,19 @@ public class Main {
         printer.imprimirInformacion(vehiculoAuto);
         System.out.println();
         printer.imprimirInformacion(vehiculoCamion);
+
+        Vehiculo vehiculo1 = new Vehiculo("ABC123", "Ford", 2010, 1200.0);
+        Auto auto1 = new Auto("DEF456", "Toyota", 2020, 500.0, 5);
+        Camion camion1 = new Camion("GHI789", "Mercedes", 2015, 2000.0, true);
+
+        vehiculos.add(vehiculo1);
+        vehiculos.add(auto1);
+        vehiculos.add(camion1);
+
+        for (Vehiculo v : vehiculos) {
+            System.out.println(v);
+        }
+
 
     }
 }
