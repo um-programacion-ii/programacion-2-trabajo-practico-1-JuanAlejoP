@@ -55,5 +55,18 @@ public class Main {
         // Crear un camión sin acoplado y mostrar sus datos
         Camion camionSinAcoplado = new Camion("TRK789", "Mercedes-Benz", 2021, 7500.0, false);
         printer.imprimirInformacion(camionSinAcoplado);
+
+        // Crear un Auto con cantidad de pasajeros y mostrar sus datos
+        Auto auto = new Auto("DEF456", "Toyota", 2020, 500.0, 5);
+        printer.imprimirInformacion(auto);
+
+        // Intentar crear un Auto con cantidad de pasajeros inválida
+        try {
+            Auto autoInvalido = new Auto("ZZZ999", "Fiat", 2023, 400.0, 0);
+            printer.imprimirInformacion(autoInvalido);
+        } catch (IllegalArgumentException e) {
+            System.out.println("\nError al crear auto con cantidad de pasajeros inválida: " + e.getMessage());
+        }
+
     }
 }
