@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * Clase principal del programa. Se encarga de crear e imprimir vehículos y camiones.
  */
@@ -12,7 +15,6 @@ public class Main {
      *
      * @param args Argumentos de línea de comandos (no utilizados en este programa)
      */
-
     public static void main(String[] args) {
         ArrayList<Vehiculo> vehiculos = new ArrayList<>();
         VehiculoPrinter printer = new VehiculoPrinter();
@@ -27,7 +29,6 @@ public class Main {
         System.out.println();
         printer.imprimirInformacion(v3);
 
-
         // Intentar crear un vehículo con año inválido
         try {
             Vehiculo v4 = new Vehiculo("JKL999", "Chevrolet", 1800, 1300.0);
@@ -35,6 +36,7 @@ public class Main {
         } catch (IllegalArgumentException e) {
             System.out.println("\nError al crear vehículo inválido: " + e.getMessage());
         }
+
         // Intentar crear un vehículo con patente vacía
         try {
             Vehiculo v5 = new Vehiculo("", "Nissan", 2019, 1100.0);
@@ -42,6 +44,7 @@ public class Main {
         } catch (IllegalArgumentException e) {
             System.out.println("\nError al crear vehículo con patente vacía: " + e.getMessage());
         }
+
         // Intentar crear un vehículo con capacidad de carga negativa
         try {
             Vehiculo v6 = new Vehiculo("MNO321", "Volkswagen", 2017, -500.0);
@@ -91,6 +94,67 @@ public class Main {
             System.out.println(v);
         }
 
+        // Menú interactivo para búsqueda por patente
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
 
+        do {
+            System.out.println("\n--- MENÚ ---");
+            System.out.println("1. Buscar vehículo por patente");
+            System.out.println("0. Salir");
+            System.out.print("Seleccione una opción: ");
+
+            while (!scanner.hasNextInt()) {
+                System.out.print("Por favor, ingrese un número válido: ");
+                scanner.next();
+            }
+
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar buffer
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese la patente del vehículo a buscar: ");
+                    String patenteBuscada = scanner.nextLine();
+                    Vehiculo encontrado = buscarVehiculoPorPatente(vehiculos, patenteBuscada);
+                    if (encontrado != null) {
+                        printer.imprimirInformacion(encontrado);
+                    } else {
+                        System.out.println("Vehículo no encontrado.");
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("Saliendo del programa...");
+                    break;
+
+                default:
+                    System.out.println("Opción inválida. Intente nuevamente.");
+            }
+
+        } while (opcion != 0);
+
+        scanner.close();
+    }
+
+    /**
+     * Busca un vehículo por su patente dentro de la lista proporcionada.
+     *
+     * @param lista Lista de vehículos
+     * @param patenteBuscada Patente a buscar
+     * @return Vehiculo encontrado o null si no se encuentra
+     */
+    public static Vehiculo buscarVehiculoPorPatente(List<Vehiculo> lista, String patenteBuscada) {
+        if (lista == null || lista.isEmpty()) {
+            return null;
+        }
+
+        for (Vehiculo v : lista) {
+            if (v.getPatente().equalsIgnoreCase(patenteBuscada)) {
+                return v;
+            }
+        }
+
+        return null;
     }
 }
