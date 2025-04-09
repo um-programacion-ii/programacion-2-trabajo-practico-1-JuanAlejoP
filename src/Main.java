@@ -68,5 +68,14 @@ public class Main {
             System.out.println("\nError al crear auto con cantidad de pasajeros inválida: " + e.getMessage());
         }
 
+        // Referencias de tipo Vehiculo a instancias de Auto y Camion
+        Vehiculo vehiculoAuto = new Auto("LSP123", "Renault", 2019, 450.0, 4);
+        Vehiculo vehiculoCamion = new Camion("LSP456", "Volvo", 2023, 9500.0, true);
+
+        // Imprimir usando VehiculoPrinter sin usar instanceof ni cast
+        printer.imprimirInformacion(vehiculoAuto);
+        System.out.println();
+        printer.imprimirInformacion(vehiculoCamion);
+
     }
 }
